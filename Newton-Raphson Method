@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double f(double x) {
+    return x*x*x - x - 2;  
+}
+
+double df(double x) {
+    return 3*x*x - 1;  
+}
+
+int main() {
+     cout << "Name: Md Awal Sheikh" << endl;
+    cout << "ID: 11240321772" << endl;
+    cout << "Newton-Raphson Method Implementation\n" << endl;
+
+    double x = 1.5;  
+    while (fabs(f(x)) > 0.0001) {
+        x = x - f(x) / df(x);
+    }
+    cout << "Root: " << x << endl;
+    return 0;
+}
